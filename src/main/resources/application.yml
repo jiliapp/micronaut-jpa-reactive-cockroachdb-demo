@@ -9,12 +9,15 @@ vertx:
       database: 'defaultdb'
       user: 'bbbang'
       password: "tKEYTzKI8krk0_wys_uSpg"
-      url: jdbc:postgresql://coarse-gosling-2563.g95.cockroachlabs.cloud:26257/db2
+      url: jdbc:postgresql://coarse-gosling-2563.g95.cockroachlabs.cloud:26257/db2?verify_full
       maxSize: 5
       ssl: true
       pem-trust-options:
-        path: D:/certs/ca.crt
-      ssl-mode: verify_full
+        ca-cert:
+          path: D:/certs/root.crt
+      trust-options:   #
+        ca-cert:      # 与 pem-trust-options
+          path: D:/certs/root.crt
 
 jpa:
   default:
