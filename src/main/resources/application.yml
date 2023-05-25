@@ -1,0 +1,36 @@
+micronaut:
+  application:
+    name: micronautJpaReactiveCockroachdbDemo
+vertx:
+  pg:
+    client:
+      port: 26257
+      host: 'coarse-gosling-2563.g95.cockroachlabs.cloud'
+      database: 'defaultdb'
+      user: 'bbbang'
+      password: "tKEYTzKI8krk0_wys_uSpg"
+      url: jdbc:postgresql://coarse-gosling-2563.g95.cockroachlabs.cloud:26257/db2
+      maxSize: 5
+      ssl: true
+      pem-trust-options:
+        path: D:/certs/ca.crt
+      ssl-mode: verify_full
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        hbm2ddl:
+          auto: update
+        connection:
+          db-type: postgres
+    reactive: true
+    entity-scan:
+      packages:
+        - com.example.entity
+        -
+netty:
+  default:
+    allocator:
+      max-order: 3
